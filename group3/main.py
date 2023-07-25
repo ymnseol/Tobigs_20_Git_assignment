@@ -2,7 +2,7 @@ import time, json, os, sys
 
 sys.tracebacklimit = 0 # traceback을 띄우지 않음
 WAITTIME = 2
-NUM_PLAYERS = len(os.listdir())
+NUM_PLAYERS = 5
 
 class MissonNotFinishError(Exception):
     pass
@@ -21,7 +21,7 @@ def nameCheck():
     global players # 전역 변수 생성
     players = []
 
-    for i in range(1, NUM_PLAYERS): # 플레이어 5명을 players 배열에 담슴니다.
+    for i in range(1, NUM_PLAYERS + 1): # 플레이어 5명을 players 배열에 담슴니다.
         try:
             with open("player" + str(i) + "/profile.json", "r", encoding='utf-8') as f:
                 data = json.load(f)
